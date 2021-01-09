@@ -26,6 +26,10 @@ p, h4, h5, h6 {
     }
 }
 
+img.card-img-top {
+    height: 190px;
+}
+
 li {
     padding-left: 25px;
 }
@@ -103,8 +107,4 @@ label {
 
 .navbar a:hover {
     color: var(--color-contrast);
-}
-
-.warning {
-  color: var(--color-warning);
 }
