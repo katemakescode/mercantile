@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return HttpResponse("Hello, you're at home in Mercantile.")
+class HomeView(TemplateView):
+    template_name = 'index.html'
