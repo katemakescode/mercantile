@@ -31,11 +31,11 @@ li {
 }
 
 a {
+    text-decoration: none;
     color: var(--color-dark);
 }
 
 a:hover {
-    text-decoration: none;
     color: var(--color-contrast);
 }
 
