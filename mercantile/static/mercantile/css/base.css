@@ -26,10 +26,6 @@ p, h4, h5, h6 {
     }
 }
 
-img.card-img-top {
-    height: 190px;
-}
-
 li {
     padding-left: 25px;
 }
@@ -45,6 +41,10 @@ a:hover {
 
 input {
     color: var(--color-contrast);
+}
+
+img.c4ard-img-top {
+    height: 190px;
 }
 
 label {
@@ -72,13 +72,13 @@ label {
 .btn-outline:active,
 .btn-outline:visited,
 .btn-outline:focus {
-    border-color: var(--color-light);
+    border-color: var(--color-contrast);
     color: var(--color-contrast);
 }
 
 .btn-outline:hover {
     background-color: var(--color-light);;
-    border-color: var(--color-light);
+    border-color: var(--color-white);
     color: var(--color-white);
 }
 
