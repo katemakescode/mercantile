@@ -145,9 +145,9 @@ a.social-button.borderless.static:hover, .static a.social-button.borderless:hove
 }
 
 a.social-button.borderless.icon-linkedin:hover {
-    color: var(--color-contrast); /* #0275b5; */
+    color: var(--color-light);
 }
 
 a.social-button.borderless.icon-github:hover {
-    color: var(--color-contrast); /* #4183C4;*/
+    color: var(--color-light);
 }

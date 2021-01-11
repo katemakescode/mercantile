@@ -32,11 +32,17 @@ li {
 
 a {
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-contrast);
 }
 
 a:hover {
-    color: var(--color-contrast);
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: var(--color-light);
 }
 
 input {
