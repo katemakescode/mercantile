@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 
 function Hello() {
-    return <h1 >Hello from Webpack!</h1 >;
+    return <h1 >Hello from React-Bootstrap!</h1 >;
 }
 
 render(
