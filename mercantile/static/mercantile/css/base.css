@@ -63,20 +63,20 @@ label {
     }
 }
 
-.form-control:focus, .btn-outline:focus {
+.form-control:focus, .btn-outline-primary:focus {
     border-color: rgba(108, 121, 122, 0.2);
     box-shadow: 0 0 0 0.2rem rgba(213, 209, 195, 0.4);
 }
 
-.btn-outline,
-.btn-outline:active,
-.btn-outline:visited,
-.btn-outline:focus {
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
     border-color: var(--color-contrast);
     color: var(--color-contrast);
 }
 
-.btn-outline:hover {
+.btn-outline-primary:hover {
     background-color: var(--color-light);;
     border-color: var(--color-white);
     color: var(--color-white);
