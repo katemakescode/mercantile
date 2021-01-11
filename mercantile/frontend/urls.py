@@ -1,6 +1,8 @@
 from django.urls import path
-from frontend import views
 
+from frontend.views import FrontEndView
+
+app_name = 'frontend'
 urlpatterns = [
-    path('', views.index),
+    path('', FrontEndView.as_view(), name='index'),
 ]
