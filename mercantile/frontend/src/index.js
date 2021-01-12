@@ -3,6 +3,8 @@ import {render} from 'react-dom';
 import Classics from "./components/Classics";
 import Warning from "./components/Warning";
 
+window.static = '/static/';
+
 render(
     <Classics />,
     document.getElementById('classics-root')
