@@ -6,5 +6,8 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
 
+    class Meta:
+        ordering = ['author', 'title']
+
     def __str__(self):
         return self.title
