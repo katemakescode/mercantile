@@ -13,7 +13,7 @@ function BookCard({book}) {
           <div className="card-body m-0" >
             <img className="card-img-top"
                  alt="Cover of the 2000 Modern Library edition of Anna Karenina by Leo Tolstoy"
-                 src={window.static + '/mercantile/img/anna_karenina.jpg'} />
+                 src={window.static + 'mercantile/img/anna_karenina.jpg'} />
             <h5 className="card-title pt-3" >{book.title}</h5 >
             <p className="card-text" >{book.author}</p >
           </div >
