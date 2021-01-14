@@ -1,28 +1,29 @@
 import React from "react";
 
-function CustomerMenuItems() {
+function MenuItem({url, text}) {
   return (<>
     <li className="navbar-item" >
-      <a href="#classics-root" className="nav-link" >Wishlist</a >
+      <a href={url} className="nav-link" >{text}</a >
     </li >
-    <li className="navbar-item" >
-      <a href="#classics-root" className="nav-link" >Account</a >
-    </li >
+  </ >);
+}
+
+function CustomerMenuItems() {
+  return (<>
+    <MenuItem url="#classics-root" text="Wishlist" />
+    <MenuItem url="#classics-root" text="Account" />
   </ >);
 }
 
 function GuestMenuItems() {
   return (<>
-    <li className="navbar-item" >
-      <a href="#classics-root" className="nav-link" >Sign Up</a >
-    </li >
+    <MenuItem url="#classics-root" text="Sign Up" />
   </ >);
 }
 
 function MenuItems({isLoggedIn}) {
   return isLoggedIn ? <CustomerMenuItems /> : <GuestMenuItems />;
 }
-
 
 function Navigation({url}) {
   return (<>
@@ -31,14 +32,12 @@ function Navigation({url}) {
     </a >
     <button className="navbar-toggler" data-toggle="collapse"
             data-target="#navbar-menu" >
-      <span className="navbar-toggler-icon" ></span >
+      <span className="navbar-toggler-icon" />
     </button >
     <div id="navbar-menu" className="collapse navbar-collapse" >
       <ul className="navbar-nav ml-auto" >
         <MenuItems isLoggedIn />
-        <li className="navbar-item" >
-          <a href="#warning-root" className="nav-link" >Cart</a >
-        </li >
+        <MenuItem url="#warning-root" text="Cart" />
       </ul >
     </div >
   </ >);
