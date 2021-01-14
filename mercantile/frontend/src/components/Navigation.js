@@ -10,14 +10,14 @@ function MenuItem({url, text}) {
 
 function CustomerMenuItems() {
   return (<>
-    <MenuItem url="#classics-root" text="Wishlist" />
-    <MenuItem url="#classics-root" text="Account" />
+    <MenuItem url="#classics" text="Wishlist" />
+    <MenuItem url="#classics" text="Account" />
   </ >);
 }
 
 function GuestMenuItems() {
   return (<>
-    <MenuItem url="#classics-root" text="Sign Up" />
+    <MenuItem url="#classics" text="Sign Up" />
   </ >);
 }
 
@@ -37,7 +37,7 @@ function Navigation({url}) {
     <div id="navbar-menu" className="collapse navbar-collapse" >
       <ul className="navbar-nav ml-auto" >
         <MenuItems isLoggedIn />
-        <MenuItem url="#warning-root" text="Cart" />
+        <MenuItem url="warning" text="Cart" />
       </ul >
     </div >
   </ >);
