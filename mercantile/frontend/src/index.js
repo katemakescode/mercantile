@@ -18,6 +18,3 @@ render(
     <Warning />,
     document.getElementById('warning-root')
 );
-
-const btn = document.getElementById('click')
-btn.addEventListener('click', () => alert('Click logic in index.js'))

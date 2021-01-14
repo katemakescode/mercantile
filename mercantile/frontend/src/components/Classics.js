@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 const books = [
   {id: "8171670628", title: "Anna Karenina", author: "Leo Tolstoy"},
   {id: "9781853262371", title: "Middlemarch", author: "George Eliot"},
-  {id: "9780553213416", title:"Madame Bovary", author: "Gustave Flaubert"}
+  {id: "9780553213416", title: "Madame Bovary", author: "Gustave Flaubert"}
 ];
 
 function BookCard({book}) {
@@ -23,6 +23,8 @@ function BookCard({book}) {
 }
 
 function Classics() {
+  const [error, setError] = useState(null);
+
   return (<>
     <div className="d-flex justify-content-center" >
       <h3 >CLASSICS</h3 >
@@ -34,3 +36,4 @@ function Classics() {
 }
 
 export default Classics;
+
