@@ -1,5 +1,29 @@
 import React from "react";
 
+function CustomerMenuItems() {
+  return (<>
+    <li className="navbar-item" >
+      <a href="#classics-root" className="nav-link" >Wishlist</a >
+    </li >
+    <li className="navbar-item" >
+      <a href="#classics-root" className="nav-link" >Account</a >
+    </li >
+  </ >);
+}
+
+function GuestMenuItems() {
+  return (<>
+    <li className="navbar-item" >
+      <a href="#classics-root" className="nav-link" >Sign Up</a >
+    </li >
+  </ >);
+}
+
+function MenuItems({isLoggedIn}) {
+  return isLoggedIn ? <CustomerMenuItems /> : <GuestMenuItems />;
+}
+
+
 function Navigation({url}) {
   return (<>
     <a href={url} className="navbar-brand" >
@@ -11,9 +35,7 @@ function Navigation({url}) {
     </button >
     <div id="navbar-menu" className="collapse navbar-collapse" >
       <ul className="navbar-nav ml-auto" >
-        <li className="navbar-item" >
-          <a href="#classics-root" className="nav-link" >Wishlist</a >
-        </li >
+        <MenuItems isLoggedIn />
         <li className="navbar-item" >
           <a href="#warning-root" className="nav-link" >Cart</a >
         </li >
