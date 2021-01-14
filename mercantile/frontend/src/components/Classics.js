@@ -24,6 +24,7 @@ function BookCard({book}) {
 
 function Classics() {
   const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   return (<>
     <div className="d-flex justify-content-center" >
