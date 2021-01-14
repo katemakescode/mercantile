@@ -5,10 +5,8 @@ function Star({selected = false}) {
   return <FaStar color={selected ? "gold" : "lightgrey"}/>;
 }
 
-function StarRating({ totalStars = 5 }) {
+export default function StarRating({ totalStars = 5 }) {
   return [...new Array(totalStars)].map(
     (_, i) => <Star key={i} selected />
   );
 }
-
-export default StarRating;

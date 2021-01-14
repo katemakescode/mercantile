@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import StarRating from "./StarRating";
 
 
-function Warning() {
+export default function Warning() {
   const [weather, setWeather] = useState('sunny');
 
   function handleClick() {
@@ -25,5 +25,3 @@ function Warning() {
     </section >
   );
 }
-
-export default Warning;

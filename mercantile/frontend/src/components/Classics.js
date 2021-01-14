@@ -22,7 +22,7 @@ function BookCard({book}) {
   );
 }
 
-function Classics() {
+export default function Classics() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(true);
 
@@ -37,6 +37,3 @@ function Classics() {
     </section >
   );
 }
-
-export default Classics;
-

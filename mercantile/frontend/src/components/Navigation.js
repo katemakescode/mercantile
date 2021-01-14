@@ -25,7 +25,7 @@ function MenuItems({isLoggedIn}) {
   return isLoggedIn ? <CustomerMenuItems /> : <GuestMenuItems />;
 }
 
-function Navigation({url}) {
+export default function Navigation({url}) {
   return (<>
     <a href={url} className="navbar-brand" >
       Mercantile
@@ -42,5 +42,3 @@ function Navigation({url}) {
     </div >
   </ >);
 }
-
-export default Navigation;
