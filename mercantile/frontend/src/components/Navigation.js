@@ -1,28 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 
-function MenuItem({url, text}) {
+function MenuItem({url, text, onSelect = f => f}) {
   return (<>
     <li className="navbar-item" >
-      <a href={url} className="nav-link" >{text}</a >
+      <a href={url} className="nav-link" onClick={onSelect}>{text}</a >
     </li >
   </ >);
 }
 
-function CustomerMenuItems() {
+function CustomerMenuItems({onSelect}) {
   return (<>
     <MenuItem url="#classics" text="Wishlist" />
-    <MenuItem url="#classics" text="Account" />
+    <MenuItem text="Account" onSelect={onSelect} />
   </ >);
 }
 
-function GuestMenuItems() {
+function GuestMenuItems({onSelect}) {
   return (<>
-    <MenuItem url="#classics" text="Sign Up" />
+    <MenuItem text="Sign Up" onSelect={onSelect}/>
   </ >);
 }
 
-function MenuItems({isLoggedIn}) {
-  return isLoggedIn ? <CustomerMenuItems /> : <GuestMenuItems />;
+function MenuItems() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  if (isLoggedIn) {
+    return <CustomerMenuItems onSelect={() => setIsLoggedIn(false)} />;
+  } else {
+    return <GuestMenuItems onSelect={() => setIsLoggedIn(true)}/>;
+  }
 }
 
 export default function Navigation({url}) {
@@ -30,14 +36,13 @@ export default function Navigation({url}) {
     <a href={url} className="navbar-brand" >
       Mercantile
     </a >
-    <button className="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-menu" >
+    <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu" >
       <span className="navbar-toggler-icon" />
     </button >
     <div id="navbar-menu" className="collapse navbar-collapse" >
       <ul className="navbar-nav ml-auto" >
-        <MenuItems isLoggedIn />
-        <MenuItem url="warning" text="Cart" />
+        <MenuItems />
+        <MenuItem url="#warning" text="Cart" />
       </ul >
     </div >
   </ >);

@@ -22,18 +22,32 @@ function BookCard({book}) {
   );
 }
 
-export default function Classics() {
+function BookList() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(true);
+  const [items, setItems] = useState([]);
 
+  // setIsLoaded(false);
+
+  if (!isLoaded) {
+    // return <div>Error: {error.message}</div>;
+    return <div >Loading</div >;
+  } else {
+    return (
+        books.map(book => <BookCard key={book.id} book={book} />)
+    );
+  }
+}
+
+export default function Classics() {
   return (
-    <section id="classics" className="py-5" >
-      <div className="d-flex justify-content-center" >
-        <h3 >CLASSICS</h3 >
-      </div >
-      <div className="row d-flex justify-content-center" >
-        {books.map(book => <BookCard key={book.id} book={book} />)}
-      </div >
-    </section >
+      <section id="classics" className="py-5" >
+        <div className="d-flex justify-content-center" >
+          <h3 >CLASSICS</h3 >
+        </div >
+        <div className="row d-flex justify-content-center" >
+          <BookList />
+        </div >
+      </section >
   );
 }
