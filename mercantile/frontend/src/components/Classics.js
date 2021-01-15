@@ -1,10 +1,5 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
-const books = [
-  {id: "8171670628", title: "Anna Karenina", author: "Leo Tolstoy"},
-  {id: "9781853262371", title: "Middlemarch", author: "George Eliot"},
-  {id: "9780553213416", title: "Madame Bovary", author: "Gustave Flaubert"}
-];
 
 function BookCard({book}) {
   return (
@@ -22,12 +17,14 @@ function BookCard({book}) {
   );
 }
 
-function BookList() {
+function BookList({books = []}) {
   const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
-  // setIsLoaded(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, [])
 
   if (!isLoaded) {
     // return <div>Error: {error.message}</div>;
@@ -39,14 +36,14 @@ function BookList() {
   }
 }
 
-export default function Classics() {
+export default function Classics({books = []}) {
   return (
       <section id="classics" className="py-5" >
         <div className="d-flex justify-content-center" >
           <h3 >CLASSICS</h3 >
         </div >
         <div className="row d-flex justify-content-center" >
-          <BookList />
+          <BookList books={books} />
         </div >
       </section >
   );
