@@ -8,8 +8,8 @@
 
 body {
     background-color: var(--color-white);
-    color: var(--color-contrast);
     font-family: 'Montserrat', sans-serif;
+    color: var(--color-contrast);
 }
 
 p, h4, h5, h6 {
@@ -54,8 +54,8 @@ img.c4ard-img-top {
 }
 
 label {
-    color: var(--color-contrast);
     opacity: 0.7;
+    color: var(--color-contrast);
 }
 
 #about .text {
@@ -70,8 +70,8 @@ label {
 }
 
 .form-control:focus, .btn-outline-primary:focus {
-    border-color: rgba(108, 121, 122, 0.2);
     box-shadow: 0 0 0 0.2rem rgba(213, 209, 195, 0.4);
+    border-color: rgba(108, 121, 122, 0.2);
 }
 
 .btn-outline-primary,
@@ -83,15 +83,15 @@ label {
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--color-light);;
     border-color: var(--color-white);
+    background-color: var(--color-light);;
     color: var(--color-white);
 }
 
 .alert {
     display: inline-block;
-    height: 20%;
     border-color: var(--color-light);
+    height: 20%;
     color: var(--color-contrast);
 }
 

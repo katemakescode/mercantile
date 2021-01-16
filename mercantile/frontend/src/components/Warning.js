@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import StarRating from "./StarRating";
 
 
@@ -15,17 +18,19 @@ export default function Warning() {
   }
 
   return (
-    <section id="warning" className="d-flex py-5 bg-color-light text-center justify-content-center" >
-      <div className="col col-md-9 mx-auto" >
+      <Container fluid as="section" id="warning" className="py-5 bg-color-light text-center" >
         <h3 >WARNING</h3 >
-        <h5 className="text my-4 px-1" >
+        <h5 className="my-4 px-1" >
           This bookstore, despite appearances, sells no books.
         </h5 >
-        <div ><StarRating /></div >
-        <Button onClick={handleClick} variant="outline-primary" className="mt-4" >
-          {weather}
-        </Button >
-      </div >
-    </section >
+        <Row >
+          <Col ><StarRating /></Col >
+        </Row >
+        <Row >
+          <Col >
+            <Button onClick={handleClick} variant="outline-primary" className="mt-4" >{weather}</Button >
+          </Col >
+        </Row >
+      </Container >
   );
 }
