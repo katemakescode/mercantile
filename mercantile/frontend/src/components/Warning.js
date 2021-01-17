@@ -27,9 +27,7 @@ export default function Warning() {
           <Col ><StarRating /></Col >
         </Row >
         <Row >
-          <Col >
-            <Button onClick={handleClick} variant="outline-primary" className="mt-4" >{weather}</Button >
-          </Col >
+          <Col ><Button onClick={handleClick} variant="outline-primary" className="mt-4" >{weather}</Button ></Col >
         </Row >
       </Container >
   );
