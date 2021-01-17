@@ -38,7 +38,7 @@ function BookSearchResultsList({books = []}) {
   }
 }
 
-export default function Masthead({books = []}) {
+export default function BookSearch({books = []}) {
   return (
       <Container fluid as="section" id="masthead" className="py-5 bg-color-light text-center" >
         <h2 className="my-4" >Books for Book Lovers</h2 >

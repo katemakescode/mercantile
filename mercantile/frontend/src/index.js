@@ -2,7 +2,7 @@ import React, {StrictMode} from 'react';
 import {render} from 'react-dom';
 
 import Classics from './components/Classics';
-import Masthead from "./components/Masthead";
+import BookSearch from "./components/BookSearch";
 import Navigation from './components/Navigation';
 import Warning from './components/Warning';
 
@@ -15,7 +15,7 @@ render(
 
 render(
     <StrictMode >
-      <Masthead />
+      <BookSearch />
       <Classics books={bookData.books} />
       <Warning />
     </StrictMode >,
