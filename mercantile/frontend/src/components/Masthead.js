@@ -12,6 +12,7 @@ function BookSearchForm() {
       <InputGroup className="mb-3" >
         <InputGroup.Prepend ><InputGroup.Checkbox /></InputGroup.Prepend >
         <FormControl placeholder="Find a book" />
+        <InputGroup.Append ><InputGroup.Text >Search</InputGroup.Text ></InputGroup.Append >
       </InputGroup >
   );
 }
@@ -20,8 +21,8 @@ export default function Masthead() {
   return (
       <Container fluid as="section" id="masthead" className="py-5 bg-color-light text-center" >
         <h2 className="my-4" >Books for Book Lovers</h2 >
-        <Row className="my-4 justify-content-center">
-          <Col md="auto"><BookSearchForm /></Col >
+        <Row className="my-4 justify-content-center" >
+          <Col md="auto" ><BookSearchForm /></Col >
         </Row >
       </Container >
   );

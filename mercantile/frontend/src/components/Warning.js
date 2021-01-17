@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useReducer, useState} from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -7,15 +7,14 @@ import StarRating from "./StarRating";
 
 
 export default function Warning() {
-  const [weather, setWeather] = useState('sunny');
+  const [weather, toggleWeather] = useReducer(
+      weather => (weather === 'sunny') ? 'rainy' : 'sunny',
+      'sunny'
+  );
 
   useEffect(() => {
     console.log(`The weather is currently ${weather}`);
   }, [weather]);
-
-  function handleClick() {
-    setWeather((weather === 'sunny') ? 'rainy' : 'sunny');
-  }
 
   return (
       <Container fluid as="section" id="warning" className="py-5 bg-color-light text-center" >
@@ -27,7 +26,7 @@ export default function Warning() {
           <Col ><StarRating /></Col >
         </Row >
         <Row >
-          <Col ><Button onClick={handleClick} variant="outline-primary" className="mt-4" >{weather}</Button ></Col >
+          <Col ><Button onClick={toggleWeather} variant="outline-primary" className="mt-4" >{weather}</Button ></Col >
         </Row >
       </Container >
   );
