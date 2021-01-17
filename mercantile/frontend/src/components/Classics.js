@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 
-
 function BookCard({book}) {
   return (
       <div className="card col-md-2 mx-4 mx-md-4 my-4 pt-3" >
@@ -17,23 +16,10 @@ function BookCard({book}) {
   );
 }
 
-function BookList({books = []}) {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, [])
-
-  if (!isLoaded) {
-    // return <div>Error: {error.message}</div>;
-    return <div >Loading</div >;
-  } else {
-    return (
-        books.map(book => <BookCard key={book.id} book={book} />)
-    );
-  }
+function ClassicsBookList({books = []}) {
+  return (
+      books.map(book => <BookCard key={book.id} book={book} />)
+  );
 }
 
 export default function Classics({books = []}) {
@@ -43,7 +29,7 @@ export default function Classics({books = []}) {
           <h3 >CLASSICS</h3 >
         </div >
         <div className="row d-flex justify-content-center" >
-          <BookList books={books} />
+          <ClassicsBookList books={books} />
         </div >
       </section >
   );
