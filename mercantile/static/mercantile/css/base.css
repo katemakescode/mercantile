@@ -17,11 +17,11 @@ p, h4, h5, h6 {
 }
 
 @media (min-width: 992px) {
-    #masthead h2 {
+    #booksearch h2 {
         font-size: 2.8rem;
     }
 
-    #masthead h5 {
+    #booksearch h5 {
         font-size: 2rem;
     }
 }
