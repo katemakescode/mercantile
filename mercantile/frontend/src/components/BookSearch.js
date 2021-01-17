@@ -19,31 +19,38 @@ function BookSearchForm() {
   );
 }
 
-function BookSearchResultsList({books = []}) {
+function BookSearchResultsList({query}) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+        .then(response => response.json())
+        .then(setData);
     setIsLoaded(true);
   }, [])
 
-  if (!isLoaded) {
+  if (!data) {
     // return <div>Error: {error.message}</div>;
     return <div >Loading</div >;
   } else {
     return (
-        books.map(book => <BookCard key={book.id} book={book} />)
+        // books.map(book => <BookCard key={book.id} book={book} />)
+        <div >{JSON.stringify((data.items))}</div >
     );
   }
 }
 
-export default function BookSearch({books = []}) {
+export default function BookSearch() {
   return (
-      <Container fluid as="section" id="masthead" className="py-5 bg-color-light text-center" >
+      <Container fluid as="section" id="booksearch" className="py-5 bg-color-light text-center" >
         <h2 className="my-4" >Books for Book Lovers</h2 >
         <Row className="my-4 justify-content-center" >
           <Col md="auto" ><BookSearchForm /></Col >
+        </Row >
+        <Row className="justify-content-center" >
+          <BookSearchResultsList query={'cats'} />
         </Row >
       </Container >
   );

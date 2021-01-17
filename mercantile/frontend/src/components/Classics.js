@@ -12,8 +12,10 @@ function ClassicsBookList({books = []}) {
 
 export default function Classics({books = []}) {
   return (
-      <Container fluid as="section" id="classics" className="py-5 text-center" >
-        <h3 >CLASSICS</h3 >
+      <Container fluid as="section" id="classics" className="py-5" >
+        <Row className="justify-content-center" >
+          <h3 >CLASSICS</h3 >
+        </Row >
         <Row className="justify-content-center" >
           <ClassicsBookList books={books} />
         </Row >
