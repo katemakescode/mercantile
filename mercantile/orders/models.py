@@ -1,3 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
+class Order(models.Model):
+    date_ordered = models.DateTimeField(auto_now_add=True)
+    date_shipped = models.DateTimeField(blank=True, null=True)
+
+
+class OrderLine(models.Model):
+    order = models.ForeignKey('Order', on_delete=models.CASCADE)
+    book_id = models.CharField(max_length=20)
+    quantity = models.IntegerField(default=1)
