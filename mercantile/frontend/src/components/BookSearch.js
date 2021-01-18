@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import PropTypes from "prop-types";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -19,25 +20,46 @@ function BookSearchForm() {
   );
 }
 
-function BookSearchResultsList({query}) {
+function BookSearchResultsList({books}) {
+  return (<>
+    {books.slice(0, 2).map(
+        book => <BookCard key={book.id} book={
+          {title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}
+        } />
+    )}
+  </>);
+}
+BookSearchResultsList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    volumeInfo: PropTypes.shape({
+      title: PropTypes.string,
+      authors: PropTypes.arrayOf(PropTypes.string)
+    }).isRequired
+  })).isRequired
+};
+
+
+function BookSearchResults({query}) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    if (!query) return;
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
         .then(response => response.json())
-        .then(response => setItems(response.items));
-    setIsLoaded(true);
-  }, [])
+        .then(response => setItems(response.items))
+        .then(() => setIsLoaded(true))
+        .catch(setError);
+  }, [isLoaded])
+
+  if (error) return <pre>JSON.stringify(error, null, 2)</pre>;
+  if (!isLoaded) return <h2>Loading...</h2>;
 
   if (items) {
-    return (<>
-      {items.slice(0, 2).map(
-          book => <BookCard key={book.id} book={
-            {title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}
-          } />
-      )}</>
+    return (
+        <BookSearchResultsList books={items} />
     );
   }
 }
@@ -51,8 +73,8 @@ export default function BookSearch() {
         <Row className="my-4 justify-content-center" >
           <Col md="auto" ><BookSearchForm /></Col >
         </Row >
-        <Row className="justify-content-center" >
-          <BookSearchResultsList query={'cats'} />
+        <Row className="book-list justify-content-center" >
+          <BookSearchResults query={'cats'} />
         </Row >
       </Container >
   );
