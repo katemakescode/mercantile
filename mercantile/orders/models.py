@@ -9,7 +9,7 @@ class Order(models.Model):
         ordering = ('-date_ordered',)
 
     def __str__(self):
-        return self.date_ordered
+        return f'#{self.id} {self.date_ordered.strftime("%d/%m/%Y %H:%M")}'
 
 
 class OrderLine(models.Model):
