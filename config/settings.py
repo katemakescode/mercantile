@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig',
     'rest_framework',
     'frontend.apps.FrontEndConfig',
     'django.contrib.admin',
