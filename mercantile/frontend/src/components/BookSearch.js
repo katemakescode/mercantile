@@ -1,24 +1,11 @@
-import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
-
-import Button from "react-bootstrap/Button";
+import React, {useEffect, useState} from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import FormControl from "react-bootstrap/FormControl";
-import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 
 import BookCard from "./BookCard";
-
-function BookSearchForm() {
-  return (
-      <InputGroup className="mb-3" >
-        <InputGroup.Prepend ><InputGroup.Checkbox /></InputGroup.Prepend >
-        <FormControl placeholder="Find a book" />
-        <InputGroup.Append ><InputGroup.Text >Search</InputGroup.Text ></InputGroup.Append >
-      </InputGroup >
-  );
-}
+import BookSearchForm from "./BookSearchForm";
 
 function BookSearchResultsList({books}) {
   return (<>

@@ -82,6 +82,17 @@ label {
     border-color: rgba(108, 121, 122, 0.2);
 }
 
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    box-shadow: none;
+    border-color: var(--color-light);
+    background-color: var(--color-white);
+    color: var(--color-contrast);
+}
+
 .btn-outline-primary,
 .btn-outline-primary:active,
 .btn-outline-primary:visited,
