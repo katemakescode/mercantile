@@ -1,17 +1,22 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 export default function BookCard({book}) {
   return (
-      <div className="card col-md-2 mx-4 mx-md-4 my-4 pt-3" >
-        <a href="https://en.wikipedia.org/wiki/Anna_Karenina" >
-          <div className="card-body m-0" >
-            <img className="card-img-top"
-                 alt="Cover of the 2000 Modern Library edition of Anna Karenina by Leo Tolstoy"
-                 src={window.static + 'mercantile/img/anna_karenina.jpg'} />
-            <h5 className="card-title pt-3" >{book.title}</h5 >
-            <p className="card-text" >{book.author}</p >
-          </div >
-        </a >
-      </div >
+      <Container className="col-md-4 m-4 bg-color-white">
+        <Row>
+          <Col className="col-md-4 p-0">
+              <img className='book-card-cover'
+                    src={window.static + 'mercantile/img/anna_karenina.jpg'} alt=''/>
+          </Col>
+          <Col className="pl-0 py-4">
+            <h5>{book.title}</h5>
+            <p>{book.author}</p>
+          </Col>
+        </Row>
+      </Container>
   );
 }

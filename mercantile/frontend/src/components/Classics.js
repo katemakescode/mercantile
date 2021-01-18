@@ -6,7 +6,7 @@ import BookCard from "./BookCard";
 
 function ClassicsBookList({books = []}) {
   return (
-      books.map(book => <BookCard key={book.id} book={book} />)
+      books.slice(0,2).map(book => <BookCard key={book.id} book={book} />)
   );
 }
 

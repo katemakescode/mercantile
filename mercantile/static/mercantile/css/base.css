@@ -17,12 +17,16 @@ p, h4, h5, h6 {
 }
 
 @media (min-width: 992px) {
-    #booksearch h1 {
+    h1 {
         font-size: 2.8rem;
     }
 
-    #booksearch h4 {
+    h4 {
         font-size: 2rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
     }
 }
 
@@ -49,7 +53,7 @@ input {
     color: var(--color-contrast);
 }
 
-img.c4ard-img-top {
+img.book-card-cover {
     height: 190px;
 }
 
@@ -93,6 +97,10 @@ label {
     border-color: var(--color-light);
     height: 20%;
     color: var(--color-contrast);
+}
+
+.bg-color-white {
+    background-color: var(--color-white);
 }
 
 .bg-color-light {
