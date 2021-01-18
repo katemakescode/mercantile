@@ -25,7 +25,6 @@ function BookSearchResultsList({query}) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // API key AIzaSyDh4Ha95ti7GLkVbPKdyXuoowEXOgRVHak
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
         .then(response => response.json())
         .then(response => setItems(response.items));
