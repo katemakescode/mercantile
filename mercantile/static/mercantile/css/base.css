@@ -61,7 +61,7 @@ input {
     border-width: 2px;
 }
 
-h5 {
+.book-card h5 {
     font-weight: bold;
 }
 

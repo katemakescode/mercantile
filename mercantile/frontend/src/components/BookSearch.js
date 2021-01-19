@@ -1,10 +1,7 @@
-import PropTypes from "prop-types";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-
-import BookCard from "./BookCard";
 import BookSearchForm from "./BookSearchForm";
 
 export default function BookSearch() {

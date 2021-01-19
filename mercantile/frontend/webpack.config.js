@@ -7,7 +7,16 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+				test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
       }
     ]
   }
 };
+

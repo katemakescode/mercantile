@@ -1,7 +1,7 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 export default function BookCard({book, bgColor="bg-color-white"}) {
@@ -15,6 +15,7 @@ export default function BookCard({book, bgColor="bg-color-white"}) {
             <h5>{book.title}</h5>
             <p>{book.author}</p>
             <p>${book.price}</p>
+            <Button variant="primary">Add to cart</Button>
           </Col>
         </Row>
       </Card>

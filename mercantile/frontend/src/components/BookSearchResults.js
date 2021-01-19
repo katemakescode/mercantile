@@ -1,11 +1,9 @@
 import PropTypes from "prop-types";
 import React, {useEffect, useState} from "react";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 import BookCard from "./BookCard";
-import bookData from '../book-data.json';
 
 function BookSearchResultsList({books}) {
   return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(book =>
