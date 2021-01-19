@@ -11,10 +11,12 @@ export default function BookCard({book}) {
           <Col className="col-md-4 p-0">
               <img className='book-card-cover'
                     src={window.static + 'mercantile/img/anna_karenina.jpg'} alt=''/>
+                    {/*src={book.img-url} alt=''/>*/}
           </Col>
           <Col className="pl-0 py-4">
             <h5>{book.title}</h5>
             <p>{book.author}</p>
+            <p>${book.price}</p>
           </Col>
         </Row>
       </Container>

@@ -11,11 +11,17 @@ function BookSearchResultsList({books}) {
   return (<>
     {books.slice(0, 2).map(
         book => <BookCard key={book.id} book={
-          {title: book.volumeInfo.title, author: book.volumeInfo.authors[0]}
+          {
+            title: book.volumeInfo.title,
+            author: book.volumeInfo.authors[0],
+            price: 99.99,
+            imgUrl: window.static + 'mercantile/img/anna_karenina.jpg'
+          }
         } />
     )}
   </>);
 }
+
 BookSearchResultsList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
@@ -41,8 +47,8 @@ function BookSearchResults({query}) {
         .catch(setError);
   }, [isLoaded])
 
-  if (error) return <pre>JSON.stringify(error, null, 2)</pre>;
-  if (!isLoaded) return <h2>Loading...</h2>;
+  if (error) return <pre >JSON.stringify(error, null, 2)</pre >;
+  if (!isLoaded) return <h2 >Loading...</h2 >;
 
   if (items) {
     return (

@@ -2,16 +2,22 @@
   {
     "id": "8171670628",
     "title": "Anna Karenina",
-    "author": "Leo Tolstoy"
+    "author": "Leo Tolstoy",
+    "price": 14.37,
+    "imgUrl": "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
   },
   {
     "id": "9781853262371",
     "title": "Middlemarch",
-    "author": "George Eliot"
+    "author": "George Eliot",
+    "price": 14.37,
+    "imgUrl": "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
   },
   {
     "id": "9780553213416",
     "title": "Madame Bovary",
-    "author": "Gustave Flaubert"
+    "author": "Gustave Flaubert",
+    "price": 14.37,
+    "imgUrl": "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
   }
 ]}
