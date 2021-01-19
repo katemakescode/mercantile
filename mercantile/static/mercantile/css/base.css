@@ -57,6 +57,10 @@ input {
     height: 210px;
 }
 
+.book-card {
+    border-width: 2px;
+}
+
 img.book-card-cover {
     height: 190px;
 }

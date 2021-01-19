@@ -8,29 +8,25 @@ import BookCard from "./BookCard";
 import BookSearchForm from "./BookSearchForm";
 
 function BookSearchResultsList({books}) {
-  return (<>
-    {books.slice(0, 2).map(
-        book => <BookCard key={book.id} book={
-          {
-            title: book.volumeInfo.title,
-            author: book.volumeInfo.authors[0],
-            price: 99.99,
-            imgUrl: window.static + 'mercantile/img/anna_karenina.jpg'
-          }
-        } />
-    )}
-  </>);
+  return (<>{books.map(book =>
+      <BookCard key={book.id} book={{
+        title: book.volumeInfo.title,
+        author: book.volumeInfo.authors[0],
+        price: 99.99,
+        imgUrl: "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
+      }} />
+  )}</>);
 }
-
-BookSearchResultsList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    volumeInfo: PropTypes.shape({
-      title: PropTypes.string,
-      authors: PropTypes.arrayOf(PropTypes.string)
-    }).isRequired
-  })).isRequired
-};
+BookSearchResultsList.propTypes =
+    {
+      books: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        volumeInfo: PropTypes.shape({
+          title: PropTypes.string,
+          authors: PropTypes.arrayOf(PropTypes.string)
+        }).isRequired
+      })).isRequired
+    };
 
 
 function BookSearchResults({query}) {
@@ -71,4 +67,4 @@ export default function BookSearch() {
         </Row >
       </Container >
   );
-};
+}
