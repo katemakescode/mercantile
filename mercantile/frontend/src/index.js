@@ -16,7 +16,7 @@ render(
 render(
     <StrictMode >
       <BookSearch />
-      <Classics books={bookData.books} />
+      {/*<Classics books={bookData.books} />*/}
       <Warning />
     </StrictMode >,
     document.getElementById('react-root')

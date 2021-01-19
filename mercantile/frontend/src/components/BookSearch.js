@@ -12,7 +12,7 @@ function BookSearchResultsList({books}) {
       <BookCard key={book.id} book={{
         title: book.volumeInfo.title,
         author: book.volumeInfo.authors[0],
-        price: 99.99,
+        price: book.saleInfo.saleability,
         imgUrl: "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
       }} />
   )}</>);
@@ -36,7 +36,7 @@ function BookSearchResults({query}) {
 
   useEffect(() => {
     if (!query) return;
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&country=US&filter=paid-ebooks`)
         .then(response => response.json())
         .then(response => setItems(response.items))
         .then(() => setIsLoaded(true))
