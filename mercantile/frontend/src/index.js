@@ -1,12 +1,10 @@
 import React, {StrictMode} from 'react';
 import {render} from 'react-dom';
 
-import Classics from './components/Classics';
+import BookSearchResults from './components/BookSearchResults';
 import BookSearch from "./components/BookSearch";
 import Navigation from './components/Navigation';
 import Warning from './components/Warning';
-
-import bookData from './book-data.json';
 
 render(
     <Navigation url={window.url} />,
@@ -16,7 +14,7 @@ render(
 render(
     <StrictMode >
       <BookSearch />
-      {/*<Classics books={bookData.books} />*/}
+      <BookSearchResults />
       <Warning />
     </StrictMode >,
     document.getElementById('react-root')
