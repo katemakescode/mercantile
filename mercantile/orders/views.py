@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def orders(request):
+    return HttpResponse(f'Order list goes here')
+
+
+def order(request, order_id):
+    return HttpResponse(f'Order {order_id} goes here')
