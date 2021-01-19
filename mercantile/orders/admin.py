@@ -7,10 +7,7 @@ class OrderLineInline(admin.TabularInline):
     model = OrderLine
 
 
+@admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    model = Order
+    list_display = ['id', 'date_ordered', 'date_shipped']
     inlines = [OrderLineInline]
-
-
-admin.site.register(Order, OrderAdmin)
-
