@@ -13,7 +13,7 @@ function BookSearchResultsList({books}) {
         title: book.volumeInfo.title,
         author: book.volumeInfo.authors[0],
         price: book.saleInfo.retailPrice.amount,
-        imgUrl: "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
+        imgUrl: book.volumeInfo.imageLinks.smallThumbnail
       }} />
   )}</>);
 }
