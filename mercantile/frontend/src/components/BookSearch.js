@@ -8,11 +8,11 @@ import BookCard from "./BookCard";
 import BookSearchForm from "./BookSearchForm";
 
 function BookSearchResultsList({books}) {
-  return (<>{books.map(book =>
+  return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(book =>
       <BookCard key={book.id} book={{
         title: book.volumeInfo.title,
         author: book.volumeInfo.authors[0],
-        price: book.saleInfo.saleability,
+        price: book.saleInfo.retailPrice.amount,
         imgUrl: "http://books.google.com/books/content?id=H7fdPHxAIS0C&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70_fSxExXbgGGyy6AVyYYSuTHSvFT8YX20703cxhEZn4I9B5EgMRcNDZDRTBI1ZjDuB-qCX5ufOdn1mTQ48f-ayLtStmk89-P0gxqJQLiO9oxINP2UTKg4TRrC05-WC-s406F71&source=gbs_api"
       }} />
   )}</>);
