@@ -2,7 +2,7 @@ import React, {StrictMode} from 'react';
 import {render} from 'react-dom';
 
 import BookSearchResults from './components/BookSearchResults';
-import BookSearch from "./components/BookSearch";
+import Books from "./components/Books";
 import Navigation from './components/Navigation';
 import Warning from './components/Warning';
 
@@ -13,9 +13,12 @@ render(
 
 render(
     <StrictMode >
-      <BookSearch />
-      <BookSearchResults />
-      <Warning />
+      <Books />
     </StrictMode >,
     document.getElementById('react-root')
+);
+
+render(
+    <Warning />,
+    document.getElementById('footer-root')
 );

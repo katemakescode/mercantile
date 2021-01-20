@@ -25,7 +25,7 @@ BookSearchResultsList.propTypes = {
   })).isRequired
 };
 
-function BookSearchFetch({query}) {
+export default function BookSearchFetch({query}) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -49,15 +49,3 @@ function BookSearchFetch({query}) {
   }
 }
 
-export default function BookSearchResults() {
-  return (
-      <Container fluid as="section" id="classics" className="py-5 mb-3" >
-        <Row className="justify-content-center" >
-          <h3 >CLASSICS</h3 >
-        </Row >
-        <Row className="book-list justify-content-center" >
-          <BookSearchFetch query={'cats'} />
-        </Row >
-      </Container >
-  );
-}
