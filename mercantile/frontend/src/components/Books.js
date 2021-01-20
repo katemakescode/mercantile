@@ -9,13 +9,17 @@ import BookSearchFetch from "./BookSearchResults";
 export default function Books() {
   const [query, setQuery] = useState('');
 
+  const onSearch = (queryTerm) => {
+    setQuery(queryTerm);
+  }
+
   return (<>
       <Container fluid as="section" id="book-search" className="py-5 bg-color-light" >
         <Row className="my-4 justify-content-center" >
           <h1 >Books for Book Lovers</h1 >
         </Row >
         <Row className="mt-4 mb-3 justify-content-center" >
-          <Col md="auto" ><BookSearchForm /></Col >
+          <Col md="auto" ><BookSearchForm onSearch={onSearch}/></Col >
         </Row >
       </Container >
 
