@@ -7,7 +7,7 @@ import BookSearchForm from "./BookSearchForm";
 import BookSearchFetch from "./BookSearchResults";
 
 export default function Books() {
-  const [query, setQuery] = useState('cats');
+  const [query, setQuery] = useState('');
 
   return (<>
       <Container fluid as="section" id="book-search" className="py-5 bg-color-light" >
@@ -21,9 +21,9 @@ export default function Books() {
 
       <Container fluid as="section" id="book-results" className="py-5 mb-3" >
         <Row className="justify-content-center" >
-          <h3 >{query.toUpperCase()}</h3 >
+          <h3 >{(query) ? query.toUpperCase() : 'CLASSICS'}</h3 >
         </Row >
-        <Row className="book-list justify-content-center" >
+        <Row className="book-list align-items-center justify-content-center" >
           <BookSearchFetch query={query} />
         </Row >
       </Container >
