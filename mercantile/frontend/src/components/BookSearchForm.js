@@ -4,15 +4,15 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 
-export default function BookSearchForm() {
+export default function BookSearchForm(onSearch = f => f) {
   const [query, setQuery] = useState("cats");
 
-  const handleSubmit = () => alert("Search term: " + query);
+  const handleSubmit = (term) => alert("Search term: " + term);
 
-  // useEffect(() => document.title = "Books About Books");
+  useEffect(() => console.log(`Finding books about ${query}`), [query]);
 
   return (
-      <Form onSubmit={handleSubmit} >
+      <Form onSubmit={() => onSearch()} >
         <InputGroup className="mb-3" >
           <FormControl type="text" placeholder="Find a book" onChange={event => setQuery(event.target.value)} />
           <InputGroup.Append >
