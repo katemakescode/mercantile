@@ -11,7 +11,7 @@ export default function BookCard({book, bgColor="bg-color-white"}) {
           <Col className="col-md-auto p-0">
               <img className='book-card-cover' src={book.imgUrl} alt=''/>
           </Col>
-          <Col className="pl-4 py-4">
+          <Col className="pl-4 py-3">
             <h5>{book.title}</h5>
             <p>{book.author}</p>
             <p>${book.price}</p>
