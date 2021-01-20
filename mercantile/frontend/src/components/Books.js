@@ -7,7 +7,7 @@ import BookSearchForm from "./BookSearchForm";
 import BookSearchFetch from "./BookSearchResults";
 
 export default function Books() {
-  const [query, setQuery] = useState('dogs');
+  const [query, setQuery] = useState('cats');
 
   return (<>
       <Container fluid as="section" id="book-search" className="py-5 bg-color-light" >
