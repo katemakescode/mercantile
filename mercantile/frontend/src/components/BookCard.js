@@ -12,15 +12,19 @@ export default function BookCard({book, bgColor = "bg-color-white"}) {
           <Col className="col-md-auto p-0" >
             <img className='book-card-cover' src={book.imgUrl} alt='' />
           </Col >
-          <Col className="book-details pl-4 py-3" >
-            <h5 >{(book.title.length > 40) ? `${book.title.slice(0, 40).trim()} ...` : book.title}</h5 >
-            <p >{book.author}</p >
-            <InputGroup className="align-items-baseline mt-3 pt-3">
-              <InputGroup.Prepend >
-                <Button variant="primary" >Add to cart</Button >
-              </InputGroup.Prepend >
-              <InputGroup.Text >${book.price}</InputGroup.Text >
-            </InputGroup >
+          <Col className="book-details d-flex flex-column justify-content-between pl-4 py-3" >
+            <div >
+              <h5 >{(book.title.length > 40) ? `${book.title.slice(0, 40).trim()} ...` : book.title}</h5 >
+              <p >{book.author}</p >
+            </div >
+            <div >
+              <InputGroup className="" >
+                <InputGroup.Prepend >
+                  <Button variant="primary" >Add to cart</Button >
+                </InputGroup.Prepend >
+                <InputGroup.Text >${book.price}</InputGroup.Text >
+              </InputGroup >
+            </div >
           </Col >
         </Row >
       </Card >
