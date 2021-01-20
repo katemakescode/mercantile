@@ -2,5 +2,16 @@
 
 Mercantile is an eCommerce "bookstore". It is intended as a demonstration of development skill, and does not in fact sell books.
 
-Mercantile is built using Django, React and Bootstrap. Payment processing is via Stripe. Book data is retrieved 
-using the Google Books and New York Times Bestseller APIs. 
+Currently, only the first stage has been completed, where the user can enter a search term, and the site will
+retrieve and display data from the Google Books API for books matching that term.
+
+Mercantile is built using React.js, React-Bootstrap, Django and Django REST Framework. 
+
+## Road Map
+
+- [ ] addition of items to an in-memory shopping cart 
+- [ ] cart viewing, and dummy checkout handling
+- [ ] order creaton  
+- [ ] new customer creation, and order histories
+- [ ] payment processing with Stripe
+- [ ] emailing of invoices
