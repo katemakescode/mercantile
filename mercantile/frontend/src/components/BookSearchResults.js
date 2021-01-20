@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 import BookCard from "./BookCard";
-import bookData from "../book-data.json";
+import defaultBookData from "../book-data.json";
 
 function BookSearchResultsList({books}) {
   return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(book =>
@@ -28,7 +28,10 @@ BookSearchResultsList.propTypes = {
 };
 
 function DefaultBookList() {
-  return <h4 >display hardcoded classics</h4 >;
+  // window.static
+  return (<>{defaultBookData.books.slice(0, 2).map(book =>
+      <BookCard key={book.id} book={book} />,
+  )}</>);
 }
 
 export default function BookSearchFetch({query = null}) {
