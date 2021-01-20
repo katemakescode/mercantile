@@ -35,22 +35,19 @@ function DefaultBookList() {
 }
 
 export default function BookSearchFetch({query = null}) {
-  if (!query) {
-      return <DefaultBookList />
-  }
+  if (!query) return <DefaultBookList />;
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    if (!query) return;
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&country=US&filter=paid-ebooks`)
         .then(response => response.json())
         .then(response => setItems(response.items))
         .then(() => setIsLoaded(true))
         .catch(setError);
-  }, [isLoaded]);
+  }, [query]);
 
   if (error) return <pre >JSON.stringify(error, null, 2)</pre >;
   if (!isLoaded) return <h4 >Loading results...</h4 >;
