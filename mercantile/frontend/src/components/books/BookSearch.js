@@ -19,10 +19,8 @@ export default function BookSearch({query = null}) {
   if (error) return <pre >JSON.stringify(error, null, 2)</pre >;
   if (!isLoaded) return <h4 >Loading results...</h4 >;
 
-  if (items) {
-    return (
-        <BookList books={items} />
-    );
-  }
+  return (
+      <BookList books={items} />
+  );
 }
 

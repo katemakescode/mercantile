@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
 import BookCard from "./BookCard";
-import defaultBookData from "../book-data.json";
+import defaultBookData from "../../book-data.json";
 
 export default function BookList({books}) {
+  if (!books || books.length < 1) return <h4>No matching books found</h4>;
+
   return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(
       book => <BookCard key={book.id} book={book} />
   )}</>);

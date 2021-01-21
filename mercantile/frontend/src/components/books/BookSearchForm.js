@@ -5,7 +5,7 @@ import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 
 export default function BookSearchForm({onSearch = f => f}) {
-  const [queryTerm, setQueryTerm] = useState("cats");
+  const [queryTerm, setQueryTerm] = useState("");
 
   function handleFormSubmit(event) {
     event.preventDefault();

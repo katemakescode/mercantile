@@ -1,10 +1,9 @@
-import React, {StrictMode} from 'react';
-import {render} from 'react-dom';
+import React, {StrictMode} from "react";
+import {render} from "react-dom";
 
-import BookSearchResults from './components/BookSearch';
-import Books from "./components/Books";
-import Navigation from './components/Navigation';
-import Warning from './components/Warning';
+import Books from "./components/books/Books";
+import Navigation from "./components/Navigation";
+import Warning from "./components/Warning";
 
 render(
     <Navigation url={window.url} />,
