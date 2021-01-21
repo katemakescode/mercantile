@@ -30,7 +30,7 @@ function BookDetails({book}) {
             <InputGroup.Prepend >
               <Button variant="primary" >Add to cart</Button >
             </InputGroup.Prepend >
-            <InputGroup.Text >${book.price}</InputGroup.Text >
+            <InputGroup.Text >${book.saleInfo.retailPrice.amount}</InputGroup.Text >
           </InputGroup >
         </div >
       </Col >
@@ -41,7 +41,7 @@ export default function BookCard({book, bgColor = "bg-color-white"}) {
   return (
       <Card style={{width: "24rem"}} className={`book-card m-4 ${bgColor}`} >
         <Container ><Row className="p-0" >
-          <BookCover imgUrl={book.imgUrl} />
+          <BookCover imgUrl={book.volumeInfo.imageLinks.smallThumbnail} />
           <BookDetails book={book} />
         </Row ></Container >
       </Card >

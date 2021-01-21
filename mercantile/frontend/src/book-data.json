@@ -4,28 +4,46 @@
       "id": "8171670628",
       "volumeInfo": {
         "title": "Anna Karenina",
-        "authors": ["Leo Tolstoy"]
+        "authors": ["Leo Tolstoy"],
+        "imageLinks": {
+          "smallThumbnail": "/static/mercantile/img/anna_karenina.jpg"
+        }
       },
-      "price": 14.37,
-      "imgUrl": "/static/mercantile/img/anna_karenina.jpg"
+      "saleInfo": {
+        "retailPrice": {
+          "amount": 14.37
+        }
+      }
     },
     {
       "id": "9780198038016",
       "volumeInfo": {
         "title": "Middlemarch",
-        "authors": ["George Eliot"]
+        "authors": ["George Eliot"],
+        "imageLinks": {
+          "smallThumbnail": "/static/mercantile/img/middlemarch.jpg"
+        }
       },
-      "price": 42.75,
-      "imgUrl": "/static/mercantile/img/middlemarch.jpg"
+      "saleInfo": {
+        "retailPrice": {
+          "amount": 42.75
+        }
+      }
     },
     {
       "id": "9781504064880",
       "volumeInfo": {
         "title": "The Great Gatsby",
-        "author": ["F. Scott Fizgerald"]
+        "author": ["F. Scott Fizgerald"],
+        "imageLinks": {
+          "smallThumbnail": "/static/mercantile/img/great_gatsby.jpg"
+        }
       },
-      "price": 5.74,
-      "imgUrl": "/static/mercantile/img/great_gatsby.jpg"
+      "saleInfo": {
+        "retailPrice": {
+          "amount": 5.74
+        }
+      }
     }
   ]
 }

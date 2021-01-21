@@ -12,9 +12,15 @@ function BookSearchResultsList({books}) {
         volumeInfo: {
           title: book.volumeInfo.title,
           authors: [book.volumeInfo.authors[0]],
+          imageLinks: {
+            smallThumbnail: book.volumeInfo.imageLinks.smallThumbnail
+          }
         },
-        price: book.saleInfo.retailPrice.amount,
-        imgUrl: book.volumeInfo.imageLinks.smallThumbnail
+        saleInfo: {
+          retailPrice: {
+            amount: book.saleInfo.retailPrice.amount
+          }
+        }
       }} />,
   )}</>);
 }
