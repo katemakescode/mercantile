@@ -129,6 +129,7 @@ STATICFILES_DIRS = [
 ]
 
 
+
 REST_FRAMEWORK = {
     # production
     # 'DEFAULT_RENDERER_CLASSES': (
