@@ -15,11 +15,15 @@ function BookCover({imgUrl}) {
 }
 
 function BookDetails({book}) {
+  function trimTitle(title) {
+    return (title.length > 40) ? `${title.slice(0, 40).trim()} ...` : title;
+  }
+
   return (
       <Col className="book-details d-flex flex-column justify-content-between pl-4 py-3" >
         <div >
-          <h5 >{(book.title.length > 40) ? `${book.title.slice(0, 40).trim()} ...` : book.title}</h5 >
-          <p >{book.author}</p >
+          <h5 >{trimTitle(book.volumeInfo.title)}</h5 >
+          <p >{book.volumeInfo.authors[0]}</p >
         </div >
         <div >
           <InputGroup className="" >

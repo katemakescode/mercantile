@@ -9,10 +9,12 @@ import defaultBookData from "../book-data.json";
 function BookSearchResultsList({books}) {
   return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(book =>
       <BookCard key={book.id} book={{
-        title: book.volumeInfo.title,
-        author: book.volumeInfo.authors[0],
+        volumeInfo: {
+          title: book.volumeInfo.title,
+          authors: [book.volumeInfo.authors[0]],
+        },
         price: book.saleInfo.retailPrice.amount,
-        imgUrl: book.volumeInfo.imageLinks.smallThumbnail,
+        imgUrl: book.volumeInfo.imageLinks.smallThumbnail
       }} />,
   )}</>);
 }
