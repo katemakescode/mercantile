@@ -10,7 +10,7 @@ function MenuItem({url, text, onSelect = f => f}) {
 
 function CustomerMenuItems({onSelect}) {
   return (<>
-    <MenuItem url="#classics" text="Wishlist" />
+    <MenuItem text="Wishlist" />
     <MenuItem text="Account" onSelect={onSelect} />
   </ >);
 }
@@ -42,7 +42,7 @@ export default function Navigation({url}) {
     <div id="navbar-menu" className="collapse navbar-collapse" >
       <ul className="navbar-nav ml-auto" >
         <MenuItems />
-        <MenuItem url="#warning" text="Cart" />
+        <MenuItem text="Cart" />
       </ul >
     </div >
   </ >);
