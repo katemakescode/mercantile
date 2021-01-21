@@ -6,40 +6,33 @@ import Row from "react-bootstrap/Row";
 import BookCard from "./BookCard";
 import defaultBookData from "../book-data.json";
 
-function BookSearchResultsList({books}) {
-  return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(book =>
-      <BookCard key={book.id} book={{
-        volumeInfo: {
-          title: book.volumeInfo.title,
-          authors: [book.volumeInfo.authors[0]],
-          imageLinks: {
-            smallThumbnail: book.volumeInfo.imageLinks.smallThumbnail
-          }
-        },
-        saleInfo: {
-          retailPrice: {
-            amount: book.saleInfo.retailPrice.amount
-          }
-        }
-      }} />,
+function BookList({books}) {
+  return (<>{books.filter(book => book.saleInfo.retailPrice).slice(0, 2).map(
+      book => <BookCard key={book.id} book={book} />
   )}</>);
 }
 
-BookSearchResultsList.propTypes = {
+BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     volumeInfo: PropTypes.shape({
       title: PropTypes.string,
       authors: PropTypes.arrayOf(PropTypes.string),
+      imageLinks: PropTypes.shape({
+        smallThumbnail: PropTypes.string
+      })
     }).isRequired,
+    saleInfo: PropTypes.shape({
+      retailPrice: PropTypes.shape({
+          amount: PropTypes.number
+      })
+    }).isRequired
   })).isRequired,
 };
 
 function DefaultBookList() {
   // window.static
-  return (<>{defaultBookData.books.slice(0, 2).map(book =>
-      <BookCard key={book.id} book={book} />,
-  )}</>);
+  return <BookList books={defaultBookData.books} />
 }
 
 export default function BookSearchFetch({query = null}) {
@@ -62,7 +55,7 @@ export default function BookSearchFetch({query = null}) {
 
   if (items) {
     return (
-        <BookSearchResultsList books={items} />
+        <BookList books={items} />
     );
   }
 }
