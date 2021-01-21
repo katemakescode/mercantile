@@ -2,14 +2,15 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 
 export default function BookCard({book, bgColor = "bg-color-white"}) {
   return (
-      <Card className={`book-card col-md-4 m-4 ${bgColor}`} >
-        <Row >
-          <Col className="col-md-auto p-0" >
+      <Card style={{width: "24rem"}} className={`book-card m-4 ${bgColor}`} >
+        <Container ><Row className="p-0" >
+          <Col className="col-auto p-0" >
             <img className='book-card-cover' src={book.imgUrl} alt='' />
           </Col >
           <Col className="book-details d-flex flex-column justify-content-between pl-4 py-3" >
@@ -26,7 +27,7 @@ export default function BookCard({book, bgColor = "bg-color-white"}) {
               </InputGroup >
             </div >
           </Col >
-        </Row >
+        </Row ></Container >
       </Card >
   );
 }

@@ -23,7 +23,7 @@ export default function Books() {
         </Row >
       </Container >
 
-      <Container fluid as="section" id="book-results" className="py-5 mb-3" >
+      <Container fluid as="section" id="book-results" className="py-5 mb-0" >
         <Row className="justify-content-center" >
           <h3 >{(query) ? query.toUpperCase() : 'CLASSICS'}</h3 >
         </Row >

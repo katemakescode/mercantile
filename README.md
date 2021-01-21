@@ -9,6 +9,8 @@ Mercantile is built using React.js, React-Bootstrap, Django and Django REST Fram
 
 ## Road Map
 
+- [X] book search
+- [ ] responsive design
 - [ ] addition of items to an in-memory shopping cart 
 - [ ] cart viewing, and dummy checkout handling
 - [ ] order creaton  
