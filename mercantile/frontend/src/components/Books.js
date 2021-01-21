@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 import BookSearchForm from "./BookSearchForm";
-import BookSearchFetch from "./BookSearchResults";
+import BookSearch from "./BookSearch";
 
 export default function Books() {
   const [query, setQuery] = useState('');
@@ -28,7 +28,7 @@ export default function Books() {
           <h3 >{(query) ? query.toUpperCase() : 'CLASSICS'}</h3 >
         </Row >
         <Row className="book-list align-items-center justify-content-center" >
-          <BookSearchFetch query={query} />
+          <BookSearch query={query} />
         </Row >
       </Container >
   </>);
