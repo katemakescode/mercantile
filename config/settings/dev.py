@@ -1,4 +1,6 @@
 import debug_toolbar
+import dj_database_url
+
 from .base import *
 
 DEBUG = True
@@ -12,3 +14,8 @@ MIDDLEWARE += (
 )
 
 INTERNAL_IPS = ['127.0.0.1']
+
+
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=500)
+}

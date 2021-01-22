@@ -1,4 +1,4 @@
-# import dj_database_url
+import dj_database_url
 from .base import *
 
 DEBUG = False
@@ -8,9 +8,9 @@ ADMINS = (
     ('Kate McKenzie', 'kate.behind.the.web@gmail.com'),
 )
 
-# DATABASES = {
-#     'default': dj_database_url.config(conn_max_age=500, ssl_require=True)
-# }
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=500, ssl_require=True)
+}
 
 CORS_REPLACE_HTTPS_REFERER = True
 HOST_SCHEME = "https://"
