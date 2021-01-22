@@ -8,6 +8,11 @@ ADMINS = (
     ('Kate McKenzie', 'kate.behind.the.web@gmail.com'),
 )
 
+MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+] + MIDDLEWARE
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=500, ssl_require=True)
 }
