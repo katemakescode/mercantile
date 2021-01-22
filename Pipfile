@@ -10,6 +10,7 @@ django-debug-toolbar = "*"
 django = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
