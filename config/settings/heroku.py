@@ -2,20 +2,17 @@ import dj_database_url
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ['mercantile.herokuapp.com']
+ALLOWED_HOSTS = ['mercantile.herokuapp.com', '127.0.0.1']
 
 ADMINS = (
     ('Kate McKenzie', 'kate.behind.the.web@gmail.com'),
 )
 
-MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-] + MIDDLEWARE
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=500, ssl_require=True)
 }
+
 
 CORS_REPLACE_HTTPS_REFERER = True
 HOST_SCHEME = "https://"
