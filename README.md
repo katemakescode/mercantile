@@ -11,8 +11,6 @@ Mercantile is built using React.js, React-Bootstrap, Django and Django REST Fram
 
 ## Architecture
 
-![Anna Karenina](https://raw.githubusercontent.com/katemakescode/mercantile/main/mercantile/static/mercantile/img/anna_karenina.jpg)
-
 ![Mercantile Architecture](https://raw.githubusercontent.com/katemakescode/mercantile/main/docs/mercantile_architecture.png)
 
 ## Road Map
